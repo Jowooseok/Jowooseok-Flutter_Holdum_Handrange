@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Container(
-                  child: Text('수정버전'),
+                  child: Text('노커밋'),
                   color: Colors.indigoAccent,
                 ),
               ],
