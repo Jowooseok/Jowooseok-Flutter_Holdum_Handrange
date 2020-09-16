@@ -25,6 +25,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> item = ['AA', 'KK', 'AK', 'AKs'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Container(
-                  child: Text(
-                    'AA',
-                  ),
+                  child: Text('수정버전'),
                   color: Colors.indigoAccent,
                 ),
               ],
@@ -58,15 +58,8 @@ class Cards extends StatefulWidget {
 }
 
 class _CardsState extends State<Cards> {
-  List<String> item = ['AA', 'KK', 'AK', 'AKs'];
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'AA',
-      ),
-      color: Colors.indigoAccent,
-    );
+    return Container();
   }
 }
