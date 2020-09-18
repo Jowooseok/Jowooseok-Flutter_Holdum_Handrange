@@ -45,81 +45,55 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Joeun_HandRange'),
       ),
-      body: Center(
-          child: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(3),
-        crossAxisSpacing: 2,
-        mainAxisSpacing: 2,
-        crossAxisCount: 13,
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(8),
-            child: Text('AA'),
-            color: Colors.teal[100],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[200],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[300],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[400],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[500],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('AA'),
-            color: Colors.teal[600],
-          ),
-        ],
-      )),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [Text('hi')],
+            ),
+            Row(
+              children: [
+                Flexible(
+                  child: GridView.count(
+                    primary: false,
+                    padding: const EdgeInsets.all(5),
+                    shrinkWrap: true,
+                    crossAxisSpacing: 2,
+                    mainAxisSpacing: 2,
+                    crossAxisCount: 13,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(1),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "AA",
+                          style: TextStyle(),
+                        ),
+                        color: Colors.teal[100],
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(1),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "AAs",
+                          style: TextStyle(),
+                        ),
+                        color: Colors.teal[100],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: [Text('hi')],
+            ),
+            Row(
+              children: [Text('hi')],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
