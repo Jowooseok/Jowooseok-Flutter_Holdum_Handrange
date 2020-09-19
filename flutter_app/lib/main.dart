@@ -22,12 +22,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
+MyHomePageState myhomePageState = new MyHomePageState();
+
 class MyHomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => myhomePageState;
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   int utgColor = 0xffBDBDBD;
   int utg1Color = 0xffBDBDBD;
   int utg2Color = 0xffBDBDBD;
@@ -43,17 +45,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('♠Holdum_HandRange'),
+        title: Text('♠Joeun_HandRange'),
       ),
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
                 Expanded(
                   child: FlatButton(
                     color: Color(utgColor),
-                    child: Text('UTG'),
+                    child: Text('RAN'),
                     onPressed: () {
                       setState(() {
                         utgColor = 0xff616161;
@@ -66,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         sbbbColor = 0xffBDBDBD;
                       });
                       setState(() {
-                        boundary = 17;
+                        boundary = 0;
                       });
                     },
                   ),
@@ -421,7 +424,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Row(
-              children: [Text('hi')],
+              children: [Expanded(child: ChangeHandrange())],
             ),
           ],
         ),
@@ -607,6 +610,32 @@ class _MyHomePageState extends State<MyHomePage> {
 //    );
 //  }
 //}
+
+class ChangeHandrange extends StatefulWidget {
+  @override
+  _ChangeHandrangeState createState() => _ChangeHandrangeState();
+}
+
+class _ChangeHandrangeState extends State<ChangeHandrange> {
+  double _currentSliderValue = 100;
+
+  @override
+  Widget build(BuildContext context) {
+    return Slider(
+      value: _currentSliderValue,
+      min: 0,
+      max: 100,
+      divisions: 100,
+      label: _currentSliderValue.round().toString(),
+      onChanged: (double value) {
+        setState(() {
+          _currentSliderValue = value;
+          myhomePageState.boundary = (169 * value / 100).toInt();
+        });
+      },
+    );
+  }
+}
 
 class Cards extends StatefulWidget {
   int index = 0;
