@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('♠Holdum_HandRange'),
+        title: Text('♠Joeun_HandRange'),
       ),
       body: SafeArea(
         child: Column(
@@ -407,22 +407,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
-            Row(
-              children: [
-                Flexible(
-                    child: TextField(
-                  obscureText: false,
-                  onSubmitted: (String value) => {print(value)},
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Hand',
-                  ),
-                )),
-              ],
-            ),
-            Row(
-              children: [Text('hi')],
-            ),
+//            Row(
+//              children: [
+//                Flexible(
+//                    child: TextField(
+//                  obscureText: false,
+//                  onSubmitted: (String value) => {print(value)},
+//                  decoration: InputDecoration(
+//                    border: OutlineInputBorder(),
+//                    labelText: 'Hand',
+//                  ),
+//                )),
+//              ],
+//            ),
+//            Row(
+//              children: [Text('hi')],
+//            ),
           ],
         ),
       ),
