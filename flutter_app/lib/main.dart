@@ -41,6 +41,12 @@ class MyHomePageState extends State<MyHomePage> {
 
   int boundary = 169;
 
+  callback(value) {
+    setState(() {
+      boundary = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -424,7 +430,7 @@ class MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Row(
-              children: [Expanded(child: ChangeHandrange())],
+              children: [Expanded(child: ChangeHandrange(callback))],
             ),
           ],
         ),
@@ -612,6 +618,10 @@ class MyHomePageState extends State<MyHomePage> {
 //}
 
 class ChangeHandrange extends StatefulWidget {
+  Function(int) callback;
+
+  ChangeHandrange(this.callback);
+
   @override
   _ChangeHandrangeState createState() => _ChangeHandrangeState();
 }
@@ -630,7 +640,7 @@ class _ChangeHandrangeState extends State<ChangeHandrange> {
       onChanged: (double value) {
         setState(() {
           _currentSliderValue = value;
-          myhomePageState.boundary = (169 * value / 100).toInt();
+          widget.callback((169 * value / 100).toInt());
         });
       },
     );
