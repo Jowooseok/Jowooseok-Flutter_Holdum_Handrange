@@ -417,21 +417,18 @@ class MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Row(
-              children: [
-                Flexible(
-                    child: TextField(
-                  obscureText: false,
-                  onSubmitted: (String value) => {print(value)},
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Hand',
-                  ),
-                )),
-              ],
-            ),
-            Row(
               children: [Expanded(child: ChangeHandrange(callback))],
             ),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'by Wooseok',
+                    textAlign: TextAlign.right,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
